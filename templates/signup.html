@@ -4,22 +4,55 @@
 
 <h1>Signup</h1>
 <form action="/signup" method='POST'>
-    <label>Username
-        <input type="text" name="username" value=''>
-        <p>{{user_errors}}</p>
-    </label>
-    <label>Password
-        <input type="password" name="password" value=''>
-        <p>{{pass_error}}</p>
-    </label>
-    <label>Verify Password
-        <input type="password" name="verpass" value=''>
-        <p>{{verpass_error}}</p>
-    </label>
-    <label>Email (optional)
-        <input type="text" name="email" value=''>
-        <p>{{email_error}}</p>
-    </label>
+<table>
+    <tbody>
+        <tr>
+            <td>
+                <label>Username</label>
+            </td>
+            <td>
+                <input type="text" name="username" value="{{ request.form['username'] }}"/>
+            </td>
+            <td>
+                <span class="error">{{user_errors}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Password</label>
+            </td>
+            <td>
+            <input type="password" name="password" value=''>
+            </td>
+            <td>
+                <span class="error">{{pass_error}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Verify Password</label>
+            </td>
+            <td>
+                <input type="password" name="verpass" value=''>
+            </td>
+            <td>
+                <span class="error">{{verpass_error}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Email (optional)</label>
+            </td>
+            <td>
+                <input type="text" name="email" value="{{ request.form['email'] }}"/>
+            </td>
+            <td>
+                <span class="error">{{email_error}}</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+    
     <input type="submit" name="Submit">
 </form>
 {% endblock %}
