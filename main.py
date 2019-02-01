@@ -56,7 +56,7 @@ def signup_complete_form():
         verpass = ''
     else:
         if character_length(verpass):
-            verpass_error = "Usernames must be between 3 and 20 characters!"
+            verpass_error = "Passwords must be between 3 and 20 characters!"
             verpass = ''
 
     if verpass != password:
